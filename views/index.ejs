@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>User Dashboard</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+    </tr>
+
+    <% users.forEach(user => { %>
+        <tr>
+            <td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
+            <td><%= user.email %></td>
+            <td><%= user.city %></td>
+        </tr>
+    <% }) %>
+
+</table>
+
+</body>
+</html>

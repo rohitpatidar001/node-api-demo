@@ -1,0 +1,52 @@
+Goal -> This is a Node.js + MySQL demo project where Node connects directly to MySQL, fetches user data, and renders it on screen.
+
+Architecture
+
+Browser
+   ↓
+Node.js (Express)
+   ↓
+MySQL Database
+   ↓
+Users Table
+   ↓
+Display in UI
+
+Benefits:
+
+✔ Fast setup
+✔ Lightweight
+✔ Great for API integration
+✔ Full JavaScript stack
+
+#############################################################
+Run this in MySQL:
+
+CREATE DATABASE node_demo;
+
+USE node_demo;
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    city VARCHAR(100)
+);
+
+INSERT INTO users (name, email, city) VALUES
+('Rohit', 'rohit@test.com', 'Bhopal'),
+('Amit', 'amit@test.com', 'Indore'),
+('Sarah', 'sarah@test.com', 'Delhi');
+
+#############################################################
+
+Open terminal:
+
+npm install
+npm start
+
+
+http://localhost:3000
+
+
+
