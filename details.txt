@@ -34,9 +34,9 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (name, email, city) VALUES
-('Rohit', 'rohit@test.com', 'Bhopal'),
-('Amit', 'amit@test.com', 'Indore'),
-('Sarah', 'sarah@test.com', 'Delhi');
+('John', 'john@test.com', 'Paris Hilton'),
+('Lincoln', 'lincoln@test.com', 'London Breed'),
+('Jackson', 'jackson@test.com', 'Tennessee Williams');
 
 #############################################################
 

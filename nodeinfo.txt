@@ -1,0 +1,104 @@
+🧩 Project Goal
+
+“This project demonstrates a small full-stack Node.js application where the backend connects directly to MySQL, fetches user data, and dynamically displays it in the UI.”
+
+🚀 Technologies Used
+Node.js → Backend runtime
+Express → Routing/server handling
+MySQL → Database
+EJS → UI rendering
+📁 Project Structure
+node-mysql-demo
+ ┣ routes
+ ┃ ┗ userRoutes.js
+ ┣ views
+ ┃ ┣ index.ejs
+ ┃ ┗ userDetail.ejs
+ ┣ db
+ ┃ ┗ db.js
+ ┣ public
+ ┃ ┗ style.css
+ ┣ package.json
+ ┗ server.js
+⚙️ 1. Database Setup
+MySQL Table
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    city VARCHAR(100)
+);
+Explain:
+
+“I created a users table with sample data that the Node application retrieves dynamically.”
+
+🔌 2. DB Connection Layer
+File:
+db/db.js
+Code:
+mysql.createConnection(...)
+Explain:
+
+“This layer establishes the connection between Node.js and MySQL, similar to datasource configuration in Spring Boot.”
+
+🛣️ 3. Routing Layer
+File:
+routes/userRoutes.js
+✅ Home Route
+router.get("/")
+What it does:
+
+✔ Executes:
+
+SELECT * FROM users
+
+✔ Fetches all users from DB
+✔ Sends data to UI
+
+✅ User Detail Route
+router.get("/user/:id")
+What it does:
+
+✔ Reads dynamic route parameter
+✔ Executes:
+
+SELECT * FROM users WHERE id = ?
+
+✔ Displays full profile page
+
+🧠 Important Explanation
+
+“This demonstrates dynamic route handling and parameterized SQL queries.”
+
+🖥️ 4. UI Rendering Layer
+File:
+views/index.ejs
+Explain:
+
+“EJS dynamically renders database data into HTML pages similar to JSP or Thymeleaf.”
+
+Example:
+<%= user.name %>
+Meaning:
+
+Dynamic server-side rendering
+
+👤 User Detail Page
+File:
+views/userDetail.ejs
+Explain:
+
+“When a user is clicked, the application loads a dedicated detail page using route parameters.”
+
+🔄 Full End-to-End Flow (MOST IMPORTANT)
+Browser
+   ↓
+Node.js Route
+   ↓
+MySQL Query
+   ↓
+Data Returned
+   ↓
+EJS Template Rendering
+   ↓
+HTML Response
